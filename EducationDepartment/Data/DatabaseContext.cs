@@ -1,10 +1,15 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using EducationDepartment.Models;
+
 namespace EducationDepartment.Data
 {
-    public class DatabaseContext
+    public class DatabaseContext: IdentityDbContext<Account>
     {
-        public DatabaseContext()
+        public DatabaseContext(DbContextOptions options)
+        : base(options)
         {
-        }
+		}
     }
 }
